@@ -12,17 +12,20 @@ namespace Server_AuctionHouse
         public string Desciption { get; set; }      
         public decimal StartingPrice { get; set; }
         public decimal AuctionEndPrice { get; set; }
+        public bool Sold { get; set; }
+        
 
         public Item(string name, string desciption, decimal startingPrice)
         {
             this.Name = name;
             this.Desciption = desciption;
             this.StartingPrice = startingPrice;
+            this.Sold = false;
         }
 
         public override string ToString()
         {
-            return "Name = " + Name + "  Item Desciption = " + Desciption;
+            return "Name = " + Name + "  Item Desciption = " + Desciption  + " Is sold ";
         }
 
 
