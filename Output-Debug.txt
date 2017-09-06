@@ -1,0 +1,5 @@
+﻿'Server_AuctionHouse.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Server_AuctionHouse.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'c:\users\pelle\source\repos\Server_AuctionHouse\Server_AuctionHouse\bin\Debug\Server_AuctionHouse.exe'. Symbols loaded.
+'Server_AuctionHouse.exe' (CLR v4.0.30319: Server_AuctionHouse.exe): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+The program '[1028] Server_AuctionHouse.exe' has exited with code -1073741510 (0xc000013a).
+The program '[1028] Server_AuctionHouse.exe: Program Trace' has exited with code 0 (0x0).
