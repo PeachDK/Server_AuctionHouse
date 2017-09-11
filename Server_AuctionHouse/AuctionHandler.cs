@@ -25,9 +25,10 @@ namespace Server_AuctionHouse
         public void AuctionStart(Bidder bidder)
         {
             bidder.Write("Welcome to the Auction, current status is: ");
-            AuctionHouseRepo.Instance.itemList.ForEach(item => bidder.Write(item.ToString() + item.Sold.ToString()));            
-            bidder.Write("Current item is " + AuctionHouseRepo.Instance.CurrentItem.ToString()+ "Starting at " + 
-                                              AuctionHouseRepo.Instance.CurrentItem.StartingPrice.ToString() + "Current bid for Item is " + 
+            AuctionHouseRepo.Instance.itemList.ForEach(item => bidder.Write(item.ToString())); 
+            
+            bidder.Write("Current item is " + AuctionHouseRepo.Instance.CurrentItem.ToString()+ " Starting at " + 
+                                              AuctionHouseRepo.Instance.CurrentItem.StartingPrice.ToString() + " Current bid for Item is " + 
                                               AuctionHouseRepo.Instance.CurrentBid.ToString());
             GetIncomingBids(bidder);
         }
@@ -67,9 +68,7 @@ namespace Server_AuctionHouse
                     item.Sold = true;                  
                 }
             }
-        }
-
-       
+        }       
 
         public void GetIncomingBids(Bidder bidder)
         {

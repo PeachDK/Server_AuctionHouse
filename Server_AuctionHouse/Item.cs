@@ -25,7 +25,7 @@ namespace Server_AuctionHouse
 
         public override string ToString()
         {
-            return "Name = " + Name + "  Item Desciption = " + Desciption  + " Is sold ";
+            return "Name = " + Name + "  Item Desciption = " + Desciption;
         }
 
 
