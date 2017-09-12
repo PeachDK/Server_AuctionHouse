@@ -6,24 +6,33 @@ using System.Threading.Tasks;
 
 namespace Server_AuctionHouse
 {
-   public class AuctionHouseRepo
+    public class AuctionHouseRepo
     {
-        private static readonly AuctionHouseRepo instance = new AuctionHouseRepo();
+        private static object padlock = new Object();
+        private static AuctionHouseRepo instance = null;
         public static AuctionHouseRepo Instance
         {
             get
             {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new AuctionHouseRepo();
+                    }
+                }
+
                 return instance;
             }
         }
-        
+
         public List<Item> itemList { get; set; }
         public decimal CurrentBid { get; set; }
         public decimal NextBid { get; set; }
         public Bidder HighestBidder { get; set; }
         public Item CurrentItem { get; set; }
 
-        
+
         private AuctionHouseRepo()
         {
             itemList = new List<Item>();
@@ -32,11 +41,10 @@ namespace Server_AuctionHouse
             itemList.Add(new Item("Sofa", "Only used as extra bed", 800));
             itemList.Add(new Item("Lazy Chair", "Is good for relaxing, reading, tv and napping", 350));
             itemList.Add(new Item("Steel Sink", "In pretty condition", 100));
+        }
 
-        }      
-        
 
-       
+
 
 
 

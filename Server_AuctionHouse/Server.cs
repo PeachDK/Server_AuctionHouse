@@ -56,7 +56,23 @@ namespace Server_AuctionHouse
 
         public void Broadcast(string message)
         {
-            bidders.ForEach(bidder => bidder.Write(message));
+            foreach (var bidder in bidders)
+            {
+                try
+                {
+                    if (bidder.Active)
+                    {
+                        bidder.Write(message);
+                    }                    
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine($"{bidder.ToString()} Disconnected");
+                    bidder.Disconnect();                  
+                                        
+                }
+            }
+            
         }
 
     }

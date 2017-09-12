@@ -12,7 +12,7 @@ namespace Server_AuctionHouse
 {
     public class Program
     {
-       static AuctionHandler handler = new AuctionHandler();
+        //static AuctionHandler handler = new AuctionHandler();
         
         static void Main(string[] args)
         {                        
@@ -20,7 +20,8 @@ namespace Server_AuctionHouse
             while (Server.Instance.Running)
             {
                 Socket client = Server.Instance.TryAcceptClient();
-                new Thread(() => Server.Instance.On_New_Connection(client)).Start();             
+                Console.WriteLine(client.RemoteEndPoint+ "  Client connected to Server.");
+                new Thread(() => Server.Instance.On_New_Connection(client)).Start();              
 
             }
         }

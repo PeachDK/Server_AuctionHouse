@@ -1,13 +1,13 @@
 ﻿'Server_AuctionHouse.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_32\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
-'Server_AuctionHouse.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'C:\Users\Pelle\source\repos\Server_AuctionHouse\Server_AuctionHouse\bin\Debug\Server_AuctionHouse.exe'. Symbols loaded.
+'Server_AuctionHouse.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'c:\users\pelle\source\repos\Server_AuctionHouse\Server_AuctionHouse\bin\Debug\Server_AuctionHouse.exe'. Symbols loaded.
 'Server_AuctionHouse.exe' (CLR v4.0.30319: Server_AuctionHouse.exe): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'Server_AuctionHouse.exe' (CLR v4.0.30319: Server_AuctionHouse.exe): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'Server_AuctionHouse.exe' (CLR v4.0.30319: Server_AuctionHouse.exe): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'Server_AuctionHouse.exe' (CLR v4.0.30319: Server_AuctionHouse.exe): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'Server_AuctionHouse.exe' (CLR v4.0.30319: Server_AuctionHouse.exe): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.resources\v4.0_4.0.0.0_da_b77a5c561934e089\System.resources.dll'. Module was built without symbols.
 Exception thrown: 'System.IO.IOException' in System.dll
-The thread 0x121c has exited with code 0 (0x0).
+The thread 0x1ea8 has exited with code 0 (0x0).
 Exception thrown: 'System.IO.IOException' in System.dll
-The thread 0x247c has exited with code 0 (0x0).
-The program '[9260] Server_AuctionHouse.exe: Program Trace' has exited with code 0 (0x0).
-The program '[9260] Server_AuctionHouse.exe' has exited with code -1073741510 (0xc000013a).
+The thread 0x196c has exited with code 0 (0x0).
+The program '[6076] Server_AuctionHouse.exe: Program Trace' has exited with code 0 (0x0).
+The program '[6076] Server_AuctionHouse.exe' has exited with code -1073741510 (0xc000013a).

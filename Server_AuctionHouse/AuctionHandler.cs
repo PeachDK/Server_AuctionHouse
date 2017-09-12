@@ -16,7 +16,6 @@ namespace Server_AuctionHouse
     {
         private Stopwatch timer { get; set; }
 
-
         public AuctionHandler()
         {
             timer = new Stopwatch();
@@ -36,14 +35,15 @@ namespace Server_AuctionHouse
         public void Gavel(Item item)
         {
             AuctionHouseRepo.Instance.CurrentItem = item;
-            Server.Instance.Broadcast("New Item up for aution is " + item.ToString() + " Starting at " + item.StartingPrice.ToString());
+            Server.Instance.Broadcast($"New Item up for aution is {item.ToString()} Starting at {item.StartingPrice.ToString()}");
+
             
             while (item.Sold == false)
             {
                 if (AuctionHouseRepo.Instance.NextBid > AuctionHouseRepo.Instance.CurrentBid)
                 {
-                    Server.Instance.Broadcast("New current Bid on Item "+ item.ToString() + AuctionHouseRepo.Instance.NextBid + "  Highest Bidder is " +
-                                                                                            AuctionHouseRepo.Instance.HighestBidder.ToString());
+                    Server.Instance.Broadcast($"New current Bid on Item { item.ToString()} {AuctionHouseRepo.Instance.NextBid} Highest Bidder is " +
+                                                                                         $"{AuctionHouseRepo.Instance.HighestBidder.ToString()}");
 
                     AuctionHouseRepo.Instance.CurrentBid = AuctionHouseRepo.Instance.NextBid;
                     timer.Restart();
@@ -60,11 +60,12 @@ namespace Server_AuctionHouse
                 }
                 if (timer.ElapsedMilliseconds == 18000)
                 {
-                    Server.Instance.Broadcast("Third! "+ item.ToString() + " Sold to " + AuctionHouseRepo.Instance.HighestBidder.ToString() + " For ddk " +
-                                                                                         AuctionHouseRepo.Instance.CurrentBid);                   
+                    Server.Instance.Broadcast($"Third! {item.ToString()} Sold to {AuctionHouseRepo.Instance.HighestBidder.ToString()}" +
+                                                                     $" For ddk { AuctionHouseRepo.Instance.CurrentBid}");                   
                     Thread.Sleep(1);
-                    AuctionHouseRepo.Instance.NextBid = 0;
+                    AuctionHouseRepo.Instance.NextBid = 0;                    
                     item.AuctionEndPrice = AuctionHouseRepo.Instance.CurrentBid;
+                    AuctionHouseRepo.Instance.CurrentBid = 0;
                     item.Sold = true;                  
                 }
             }
@@ -82,7 +83,7 @@ namespace Server_AuctionHouse
                     {
                         bidder.Write("Not a Number!");
                     }
-                    if (bid <= AuctionHouseRepo.Instance.CurrentBid)
+                    if (bid <= AuctionHouseRepo.Instance.CurrentBid && bid < AuctionHouseRepo.Instance.CurrentItem.StartingPrice)
                     {
                         bidder.Write("Bid must be higher than current bid.");
                     }
