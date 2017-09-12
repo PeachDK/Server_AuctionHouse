@@ -14,11 +14,14 @@ namespace Server_AuctionHouse
         {
             get
             {
-                lock (padlock)
+                if (instance == null)
                 {
-                    if (instance == null)
+                    lock (padlock)
                     {
-                        instance = new AuctionHouseRepo();
+                        if (instance == null)
+                        {
+                            instance = new AuctionHouseRepo();
+                        }
                     }
                 }
 
