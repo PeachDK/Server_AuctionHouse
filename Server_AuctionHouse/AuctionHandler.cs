@@ -26,9 +26,10 @@ namespace Server_AuctionHouse
             bidder.Write("Welcome to the Auction, current status is: ");
             AuctionHouseRepo.Instance.itemList.ForEach(item => bidder.Write(item.ToString())); 
             
-            bidder.Write("Current item is " + AuctionHouseRepo.Instance.CurrentItem.ToString()+ " Starting at " + 
-                                              AuctionHouseRepo.Instance.CurrentItem.StartingPrice.ToString() + " Current bid for Item is " + 
-                                              AuctionHouseRepo.Instance.CurrentBid.ToString());
+            bidder.Write($"Current item is {AuctionHouseRepo.Instance.CurrentItem.ToString()} Starting at  " +
+                                         $"{AuctionHouseRepo.Instance.CurrentItem.StartingPrice.ToString()} " +
+                 $"Current bid for Item is {AuctionHouseRepo.Instance.CurrentBid.ToString()}");
+
             GetIncomingBids(bidder);
         }
 

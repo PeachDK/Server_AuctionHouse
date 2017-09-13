@@ -7,24 +7,12 @@ using System.Threading.Tasks;
 namespace Server_AuctionHouse
 {
     public class AuctionHouseRepo
-    {
-        private static object padlock = new Object();
-        private static AuctionHouseRepo instance = null;
+    {        
+        private static readonly AuctionHouseRepo instance = new AuctionHouseRepo();
         public static AuctionHouseRepo Instance
         {
             get
-            {
-                if (instance == null)
-                {
-                    lock (padlock)
-                    {
-                        if (instance == null)
-                        {
-                            instance = new AuctionHouseRepo();
-                        }
-                    }
-                }
-
+            {             
                 return instance;
             }
         }
@@ -34,8 +22,7 @@ namespace Server_AuctionHouse
         public decimal NextBid { get; set; }
         public Bidder HighestBidder { get; set; }
         public Item CurrentItem { get; set; }
-
-
+        
         private AuctionHouseRepo()
         {
             itemList = new List<Item>();
@@ -45,14 +32,5 @@ namespace Server_AuctionHouse
             itemList.Add(new Item("Lazy Chair", "Is good for relaxing, reading, tv and napping", 350));
             itemList.Add(new Item("Steel Sink", "In pretty condition", 100));
         }
-
-
-
-
-
-
-
-
-
     }
 }
